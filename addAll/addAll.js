@@ -3,9 +3,6 @@
 
 
 
-var add = function(array, total) {
-  // Your code here.
-  /* START SOLUTION */
-  
-  /* END SOLUTION */
+var add = function(array) {
+return array.reduce((a, b) => a+b)
 };
