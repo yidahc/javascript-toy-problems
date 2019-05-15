@@ -12,7 +12,20 @@
  */
 
 var isPowerOfTwo = function(n) {
-  // TODO: your code here
-  /* START SOLUTION */
-  /* END SOLUTION */
+  if (typeof n !== "number") {
+    return false
+  } else {
+  return n == 1 ? true : (n < 1 ? false : isPowerOfTwo(n/2));
+  }
 };
+
+/*
+I- number
+O- boolean
+E- not a number, not greater than 2
+P- to determine whether or not a number is a power of 2
+E- check if divided by 2 over and over again it equals 1 at one point
+// check for edge cases
+  // set base case for when number equals 1 or less
+    // divide number by 2 recursively
+*/
