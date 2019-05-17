@@ -11,10 +11,11 @@ var firstNonRepeatedCharacter = function(string) {
   if (typeof string !== "string") {
     return edgeCase
   }
-  for (var i=0; i < string.length; i++) {
+  let lowString = string.toLowerCase();
+  for (var i=0; i < lowString.length; i++) {
     let count = 0;
-    for (var e=0; e < string.length; e++) {
-      if (string[i] === string[e]) {
+    for (var e=0; e < lowString.length; e++) {
+      if (lowString[i] === lowString[e]) {
         count = count+1;
       }
     }
