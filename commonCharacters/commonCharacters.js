@@ -11,11 +11,25 @@
  */
 var commonCharacters = function(string1, string2) {
 let obj = {};
-let result = "";
+let result = [];
 if (typeof string1 !== "string" || typeof string2 !== "string") {
   return result
 }
-
+let str1= string1.toLowerCase();
+let str2 = string2.toLowerCase();
+for (var i=0; i<str1.length; i++) {
+  for (var x=0; x<str2.length; x++) {
+    if (str1[i] === str2[x]){
+      if (!obj[str1[i]]){
+        obj[str1[i]] = 1;
+      }
+    }
+  }
+}
+for (let key in obj) {
+  result+=key
+}
+return result
 };
 
 /*
