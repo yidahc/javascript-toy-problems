@@ -30,7 +30,27 @@
  *
 */
 var bubbleSort = function(array) {
-  // Your code here.
-  /* START SOLUTION */
-  /* END SOLUTION */
+  let finished = false;
+  while (!finished) {
+    finished = true;
+    for (var i = 0; i < array.length; i++) {
+      if (array[i+1] < array[i]) {
+        finished = false;
+        [array[i+1], array[i]] = [array[i], array[i+1]];
+      }
+    }
+  }
+  return array;
 };
+
+/*
+I- array
+O- array (sorted)
+J- to sort an array of numbers using a specific switching method
+// create a finished variable and set to false 
+// loop through array, while variable is false
+  // set variable to true
+  // check if the next element is greater than the element you are on
+    // if it is not, set variable to false
+    // and switch the two elements
+*/

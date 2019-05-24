@@ -27,7 +27,18 @@ var DIGIT_VALUES = {
 };
 
 var translateRomanNumeral = function(romanNumeral) {
-// TODO: Implement me!
-/* START SOLUTION */
- /* END SOLUTION */
+  for (var i = 0; i < romanNumeral.length; i++) {
+    if DIGIT_VALUES[romanNumeral[i]] >
+  }
 };
+
+/*
+I- string
+O- number
+E- invalid input (not a string, not roman numeral letters)
+J- to turn a string of roman numeral letters into the number they represent
+// loop through string 
+  // check if next element's value is larger than this one's
+    // if it is, subract this one's value from next one's value 
+    // if it is not, add the values together
+*/
