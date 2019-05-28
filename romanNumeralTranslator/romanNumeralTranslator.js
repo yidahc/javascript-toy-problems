@@ -26,11 +26,25 @@ var DIGIT_VALUES = {
   M: 1000
 };
 
-var translateRomanNumeral = function(romanNumeral) {
-  for (var i = 0; i < romanNumeral.length; i++) {
-    if DIGIT_VALUES[romanNumeral[i]] >
+let translateRomanNumeral = function(romanNumeral) {
+  if (typeof romanNumeral !== "string") {
+    return null;
   }
+  let result = 0;
+  for (var i = 0; i < romanNumeral.length; i+2) {
+    if (!DIGIT_VALUES[romanNumeral[i]]) {
+      return null;
+    }
+    if (DIGIT_VALUES[romanNumeral[i]] > DIGIT_VALUES[romanNumeral[i+1]]) {
+      result += DIGIT_VALUES[romanNumeral[i]] + DIGIT_VALUES[romanNumeral[i+1]]
+    } else if (DIGIT_VALUES[romanNumeral[i]] < DIGIT_VALUES[romanNumeral[i+1]]) {
+      result += DIGIT_VALUES[romanNumeral[i+1]] - DIGIT_VALUES[romanNumeral[i]]
+    }
+  }
+  return result;
 };
+
+console.log(translateRomanNumeral("IV"))
 
 /*
 I- string

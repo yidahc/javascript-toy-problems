@@ -42,9 +42,21 @@ var phoneDigitsToLetters = {
 
 
 var telephoneWords = function(digitString) {
-  // TODO: return every combination that can be spelled on a phone with these digits
-  /* START SOLUTION */
-    // Solution note: during solution review, refactor currentDigit and remainDigits
-    // They are shown here for clarity of the solution progression
-  /* END SOLUTION */
+
 };
+
+
+/*
+I- string of numbers
+O- string of letters
+J- to return all possible strings that come from input number string
+// loop through first number string of letters, starting at first letter
+  // concat with placeholder string
+  // loop through second number string of letters, starting at first letter
+  // concat with placeholder string
+    // loop through third number string of letters, starting at first letter
+    // concat with placeholder string
+      // loop through fourth number string of letters, starting at first letter
+      // concat with placeholder string
+// return string
+*/

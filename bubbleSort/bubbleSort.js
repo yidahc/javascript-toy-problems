@@ -33,15 +33,17 @@ var bubbleSort = function(array) {
   let finished = false;
   while (!finished) {
     finished = true;
-    for (var i = 0; i < array.length; i++) {
-      if (array[i+1] < array[i]) {
+    for (var i = 1; i < array.length; i+2) {
+      if (array[i-1] > array[i]) {
         finished = false;
-        [array[i+1], array[i]] = [array[i], array[i+1]];
+        [array[i-1], array[i]] = [array[i], array[i-1]];
       }
     }
   }
   return array;
 };
+
+console.log(bubbleSort([2, 5, 4, 1, 3]))
 
 /*
 I- array
