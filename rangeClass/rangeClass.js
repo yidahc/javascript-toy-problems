@@ -36,25 +36,94 @@
  *
  * evenNumbers.size() should be 4
  * evenNumbers.includes(2) should be true, evenNumbers.includes(3) should be false
- */
+
+ start - 2
+ end - 10
+ step - 3
+
+I- Numbers (3)
+O- range of numbers
+
+(10, -10, -5) == (10, -10, 5) => 10, 5, 0, -5, -10
+
+(30, 100, 10) => 30, 40, 50, 60, 70, 80, 90, 10
+
+(100, 30, -10) => 100, 90, 80, 70, 60, 50, 40, 30
+
+(30, 100, -10) => 30
 
 
-var Range = function(start, end, step) {
-  /* START SOLUTION */
-  /* END SOLUTION */
+
+50-(-50)
+50+50
+
+-50-(-50)
+-50+50
+50-50
+
+5-(-2)
+5+2
+-10-(-10)
+-10+10
+20-(-5)
+20+5
+
+(0, 5) => 0, 1, 2, 3, 4, 5
+
+(3, 10, 2) => 3, 5, 7, 9
+
+0
+
+(80, 180, 20) => 80, 100, 120, 140, 160, 180
+
+(5) => 5
+
+var myRange = new Range(3, 12, 3)
+myRange.size() = 4
+
+if there is an end:
+Math.floor(Math.abs((end-start)/step)))+1
+if there is no end
+this.size = 1
+*/
+ 
+
+var Range = function(start, end, step=1) {
+  this.start = start;
+  if (typeof end === "number"){
+    this.end = end;
+  }
+  this.step = step;
 };
 
 Range.prototype.size = function () {
-  /* START SOLUTION */
-  /* END SOLUTION */
+  if (this.end) {
+   return Math.floor(Math.abs(this.end-this.start)/this.step) +1
+ } else {
+   return 1
+ }
 };
 
+
 Range.prototype.each = function (callback) {
-  /* START SOLUTION */
-  /* END SOLUTION */
+  if (this.start < this.end) {
+    for (var i = this.start; i < this.end; i += this.step) {
+      callback(i)
+    }
+  } if (this.start > this.end) {
+      for (var i = this.start; i > this.end; i -= Math.abs(this.step)){
+        callback(i)
+      }
+    } 
 };
 
 Range.prototype.includes = function (val) {
   /* START SOLUTION */
   /* END SOLUTION */
 };
+
+
+/*
+
+
+*/
