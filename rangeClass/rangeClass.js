@@ -44,7 +44,7 @@
 I- Numbers (3)
 O- range of numbers
 
-(10, -10, -5) == (10, -10, 5) => 10, 5, 0, -5, -10
+(10, -12, 5) == (10, -10, 5) => 10, 5, 0, -5, -10
 
 (30, 100, 10) => 30, 40, 50, 60, 70, 80, 90, 10
 
@@ -88,13 +88,21 @@ this.size = 1
 */
  
 
-var Range = function(start, end, step=1) {
+var Range = function(start, end, step) {
+  if (arguments.length === 0) {
+    return null
+  }
   this.start = start;
   if (typeof end === "number"){
     this.end = end;
+  } else {
+    this.end = start
   }
-  this.step = step;
+  this.step = step || (this.start < this.end) ? 1 : -1;
 };
+
+// if (this.step === undefined)
+// this.step = (this.start < this.end) ? 1 : -1
 
 Range.prototype.size = function () {
   if (this.end) {

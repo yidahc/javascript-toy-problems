@@ -18,6 +18,11 @@
  */
 
 var powerSet = function(str) {
-  /* START SOLUTION */
-  /* END SOLUTION */
+
 };
+
+/*
+I- string
+O- array with all possible subsets
+
+*/
